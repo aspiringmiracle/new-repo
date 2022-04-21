@@ -4,7 +4,14 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-
+  width:65%;
+  margin:auto;
+  *{
+    color: #D0DCE8;
+  }
+  .Typography-index{
+    color:#D0DCE8B2;
+  }
   .rebase-timer {
     margin: 0 !important;
     line-height: 110% !important;
@@ -233,4 +240,14 @@
       margin-bottom: 15px;
     }
   }
+}
+.green-font{
+  color: #26e2b3!important;
+  font-weight:800 !important;
+}
+.bold{
+  font-weight:800 !important;
+}
+.child-card{
+  margin:0px !important;
 }

@@ -85,7 +85,7 @@ function NavContent() {
               >
                 <Typography variant="h6">
                   <SvgIcon color="primary" component={StakeIcon} />
-                  Stake
+                  Account
                 </Typography>
               </Link>
 
@@ -116,7 +116,7 @@ function NavContent() {
               >
                 <Typography variant="h6">
                   <SvgIcon color="primary" component={BondIcon} />
-                  Bond
+                  Calculator
                 </Typography>
               </Link>
 

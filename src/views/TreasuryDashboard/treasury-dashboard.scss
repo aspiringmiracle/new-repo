@@ -109,3 +109,25 @@
 .grid{
   grid-column:1;
 }
+.dashboard-info{
+  h3:last-child{
+    clear:both;
+    float:left;
+    color: #D0DCE8;
+  }
+  .price-percentage{
+    float: right;
+    background: rgba(19,24,35,.3411764705882353);
+    -webkit-backdrop-filter: blur(33px);
+    backdrop-filter: blur(33px);
+    border-radius: 21.2895px;
+    border: 1px solid rgba(19,207,207,.06666666666666667);
+    padding: 6px 16px;
+    box-shadow: 11.4753980637px 11.4753980637px 11.4753980637px 0 rgb(0 0 0 / 25%);
+    color: #26e2b3 !important;
+    font-size: 12px;
+  }
+  .price-caption{
+    float:left;
+  }
+}

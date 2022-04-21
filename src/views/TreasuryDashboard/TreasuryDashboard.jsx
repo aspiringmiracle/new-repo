@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Paper, Grid, Typography, Box, Zoom, Container, useMediaQuery } from "@material-ui/core";
+import { Paper, Typography, Box, Zoom, Grid, Container, useMediaQuery } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
 import { useSelector } from "react-redux";
 import Chart from "../../components/Chart/Chart.jsx";
@@ -112,7 +112,6 @@ function TreasuryDashboard() {
                   {marketPrice ? formatCurrency(marketPrice, 2) : <Skeleton type="text" />}
                 </Typography>
               </Box>
-
               <Box className="metric wsoprice">
                 <Typography className="Typography-index" variant="h6" color="textSecondary">
                   wsPIP Price
@@ -166,30 +165,76 @@ function TreasuryDashboard() {
             </Box>
           </Paper>
         </Box>
-        <div className="MuiGrid-root bond-hero MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12">
-          <div className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6">
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
             <Box className={`hero-metrics`}>
               <Paper className="ohm-card">
-                <Box>
-                  <Typography className="Typography-index" variant="h6" color="textSecondary">
+                <Box className="dashboard-info">
+                  <Typography className="Typography-index price-percentage" variant="h6" color="textSecondary">
+                    +17.18%
+                  </Typography>
+                  <Typography className="Typography-index price-caption" variant="h6" color="textSecondary">
                     MUMBAI Price
                   </Typography>
-                </Box>
-              </Paper>
-            </Box>
-          </div>
-          <div className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6">
-            <Box className={`hero-metrics`}>
-              <Paper className="ohm-card">
-                <Box>
-                  <Typography className="Typography-index" variant="h6" color="textSecondary">
-                    Market Value Of Treasury Assets
+                  <Typography variant="h3" color="textSecondary">
+                    $0.0698
                   </Typography>
                 </Box>
               </Paper>
             </Box>
-          </div>
-        </div>
+          </Grid>
+          <Grid item xs={6}>
+            <Box className={`hero-metrics`}>
+              <Paper className="ohm-card">
+                <Box className="dashboard-info">
+                  <Typography className="Typography-index price-percentage" variant="h6" color="textSecondary">
+                    +27.18%
+                  </Typography>
+                  <Typography className="Typography-index price-caption" variant="h6" color="textSecondary">
+                    Market Value Of Treasury Assets
+                  </Typography>
+                  <Typography variant="h3" color="textSecondary">
+                    $21,033,460.25
+                  </Typography>
+                </Box>
+              </Paper>
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Box className={`hero-metrics`}>
+              <Paper className="ohm-card">
+                <Box className="dashboard-info">
+                  <Typography className="Typography-index price-percentage" variant="h6" color="textSecondary">
+                    +2.45%
+                  </Typography>
+                  <Typography className="Typography-index price-caption" variant="h6" color="textSecondary">
+                    BNB Liquidity Value
+                  </Typography>
+                  <Typography variant="h3" color="textSecondary">
+                    $8,281,063.32
+                  </Typography>
+                </Box>
+              </Paper>
+            </Box>
+          </Grid>
+          <Grid item xs={6}>
+            <Box className={`hero-metrics`}>
+              <Paper className="ohm-card">
+                <Box className="dashboard-info">
+                  <Typography className="Typography-index price-percentage" variant="h6" color="textSecondary">
+                    +24.50%
+                  </Typography>
+                  <Typography className="Typography-index price-caption" variant="h6" color="textSecondary">
+                    Risk Free Value Market Value
+                  </Typography>
+                  <Typography variant="h3" color="textSecondary">
+                    $12,730,269.45
+                  </Typography>
+                </Box>
+              </Paper>
+            </Box>
+          </Grid>
+        </Grid>
       </Container>
     </div>
   );
