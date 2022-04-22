@@ -46,7 +46,6 @@
     font-style: italic;
   }
 }
-
 .migrate-sohm-button {
   position: absolute;
   right: 20px;
@@ -250,4 +249,21 @@
 }
 .child-card{
   margin:0px !important;
+  width:100%!important;
+  height:100%;
+  border-top:0px!important;
+  border-bottom:0px!important;
+  border-right:0px!important;
+  border-left:!important;
+}
+.price-card{
+  padding:0px !important;
+  .price-sub-card{
+      padding:20px 30px 30px 30px;
+  }
+
+}
+.flex-grow{
+    display:flex;
+    justify-content:space-between;
 }

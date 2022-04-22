@@ -184,7 +184,7 @@ function App() {
     setIsSidebarExpanded(false);
   };
 
-  let themeMode = theme === "light" ? lightTheme : theme === "dark" ? darkTheme : gTheme;
+  let themeMode = theme === "light" ? darkTheme : theme === "dark" ? darkTheme : gTheme;
 
   useEffect(() => {
     themeMode = theme === "light" ? lightTheme : darkTheme;

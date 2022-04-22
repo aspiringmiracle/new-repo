@@ -51,8 +51,6 @@ function TopBar({ theme, toggleTheme, handleDrawerToggle }) {
           {!isVerySmallScreen && <OhmMenu />}
 
           <ConnectMenu theme={theme} />
-
-          <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
         </Box>
       </Toolbar>
     </AppBar>
