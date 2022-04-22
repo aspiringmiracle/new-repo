@@ -43,8 +43,8 @@ function NavContent() {
           <Box className="branding-header" mb={6}>
             <Link href="#" target="_blank">
               <img src="/logo.png" alt="logo" width="80%" />
-              <Typography variant="h2" className="green-font" mt={10}>
-                MUMBAI
+              <Typography variant="h3" className="green-font" mt={10}>
+                MUMBAI <span className="yellow-font">finance</span>
               </Typography>
             </Link>
 
