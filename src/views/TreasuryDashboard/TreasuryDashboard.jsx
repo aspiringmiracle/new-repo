@@ -1,14 +1,19 @@
-import { useEffect, useState } from "react";
-import { Paper, Typography, Box, Zoom, Grid, Container, useMediaQuery } from "@material-ui/core";
+import { Paper, Typography, Box, Grid, Container, useMediaQuery } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
 import { useSelector } from "react-redux";
 import { trim, formatCurrency } from "../../helpers";
+<<<<<<< HEAD
 import { useTheme } from "@material-ui/core/styles";
+=======
+>>>>>>> 03b8acf41f325c17421aacd6755508b0bcb04304
 import "./treasury-dashboard.scss";
 import InfoTooltip from "src/components/InfoTooltip/InfoTooltip.jsx";
 
 function TreasuryDashboard() {
+<<<<<<< HEAD
   const theme = useTheme();
+=======
+>>>>>>> 03b8acf41f325c17421aacd6755508b0bcb04304
   const smallerScreen = useMediaQuery("(max-width: 650px)");
   const verySmallScreen = useMediaQuery("(max-width: 379px)");
 

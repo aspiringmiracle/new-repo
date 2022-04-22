@@ -22,7 +22,6 @@ import BondLogo from "../../components/BondLogo";
 import { ReactComponent as OhmLusdImg } from "src/assets/tokens/PIP-LUSD.svg";
 import { ReactComponent as ArrowUp } from "../../assets/icons/arrow-up.svg";
 import { useWeb3Context } from "src/hooks/web3Context";
-import { trim } from "../../helpers";
 
 export default function ExternalStakePool() {
   const dispatch = useDispatch();
