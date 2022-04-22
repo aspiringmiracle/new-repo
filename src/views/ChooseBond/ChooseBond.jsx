@@ -12,7 +12,7 @@ import {
   OutlinedInput,
   styled,
 } from "@material-ui/core";
-import { BondDataCard, BondTableData } from "./BondRow";
+import { BondDataCard } from "./BondRow";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { formatCurrency } from "../../helpers";
 import useBonds from "../../hooks/Bonds";
@@ -88,10 +88,9 @@ function ChooseBond() {
   });
 
   const handleSliderChange = (e, val) => {
-    console.log("value", val);
     setDateValue(val);
   };
-  console.log("second value", dateValue);
+
   return (
     <div id="choose-bond-view">
       {!isAccountLoading && !_.isEmpty(accountBonds) && <ClaimBonds activeBonds={accountBonds} />}

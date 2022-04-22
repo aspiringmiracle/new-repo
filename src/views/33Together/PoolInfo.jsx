@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Box, Button, Divider, Paper, SvgIcon, Typography, Zoom } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { Skeleton } from "@material-ui/lab";
