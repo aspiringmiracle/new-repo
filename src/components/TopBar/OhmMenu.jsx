@@ -84,9 +84,9 @@ function OhmMenu() {
     >
       <Button id="ohm-menu-button" size="large" variant="contained" color="secondary" title="OHM" aria-describedby={id}>
         <SvgIcon component={InfoIcon} color="primary" />
-        <Typography>OHM</Typography>
+        <Typography variant="3">MUMBAI</Typography>
+        <Typography variant="6">-$0.0729 USD</Typography>
       </Button>
-
       <Popper id={id} open={open} anchorEl={anchorEl} placement="bottom-start" transition>
         {({ TransitionProps }) => {
           return (
@@ -99,8 +99,13 @@ function OhmMenu() {
                     rel="noreferrer"
                   >
                     <Button size="large" variant="contained" color="secondary" fullWidth>
-                      <Typography align="left">
+                      <Typography align="left" variant="3">
                         Buy on Sushiswap <SvgIcon component={ArrowUpIcon} htmlColor="#A3A3A3" />
+                      </Typography>
+                    </Button>
+                    <Button size="large" variant="contained" color="secondary" fullWidth>
+                      <Typography align="left" variant="3">
+                        Chart <SvgIcon component={ArrowUpIcon} htmlColor="#A3A3A3" />
                       </Typography>
                     </Button>
                   </Link>

@@ -9,7 +9,7 @@ const darkTheme = {
   color: "#FCFCFC",
   gold: "#F8CC82",
   gray: "#A3A3A3",
-  textHighlightColor: "#F4D092",
+  textHighlightColor: "#26e2b3",
   backgroundColor: "rgba(8, 15, 53, 1)",
   background: `
     url('/bg.c090493f.png')`,
@@ -119,8 +119,7 @@ export const dark = responsiveFontSizes(
               },
             },
             "&.active": {
-              color: darkTheme.color,
-              textDecoration: "underline",
+              color: darkTheme.textHighlightColor,
             },
           },
         },

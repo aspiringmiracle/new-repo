@@ -116,7 +116,7 @@ function ChooseBond() {
             <Grid item xs={4}>
               <Box textAlign={`${isVerySmallScreen ? "left" : "center"}`}>
                 <Typography variant="h5" color="textSecondary">
-                  TITANO Price
+                  MUMBAI Price
                 </Typography>
                 <Typography variant="h4">
                   {isAppLoading ? (
@@ -147,7 +147,7 @@ function ChooseBond() {
             <Grid item xs={4} className={`ohm-price`}>
               <Box textAlign={`${isVerySmallScreen ? "right" : "center"}`}>
                 <Typography variant="h5" color="textSecondary">
-                  Your TITANO Balance
+                  Your MUMBAI Balance
                 </Typography>
                 <Typography variant="h4">
                   {isAppLoading ? <Skeleton width="100px" /> : formatCurrency(marketPrice, 2)}
@@ -159,7 +159,7 @@ function ChooseBond() {
           <Grid container item xs={12} style={{ marginTop: 50 }}>
             <Grid item xs={6}>
               <InputLabel htmlFor="input-with-icon-adornment">
-                <Typography variant="h6">TITANO Amount</Typography>
+                <Typography variant="h6">MUMBAI Amount</Typography>
               </InputLabel>
               <Box sx={{ marginRight: 15 }}>
                 <OutlinedInput
@@ -204,7 +204,7 @@ function ChooseBond() {
           <Grid container item xs={12} style={{ marginTop: 50 }}>
             <Grid item xs={6}>
               <InputLabel htmlFor="input-with-icon-adornment">
-                <Typography variant="h6">TITANO price at purchase ($)</Typography>
+                <Typography variant="h6">MUMBAI price at purchase ($)</Typography>
               </InputLabel>
               <Box sx={{ marginRight: 15 }}>
                 <OutlinedInput
@@ -225,7 +225,7 @@ function ChooseBond() {
             </Grid>
             <Grid item xs={6}>
               <InputLabel htmlFor="input-with-icon-adornment">
-                <Typography variant="h6">Future TITANO price ($)</Typography>
+                <Typography variant="h6">Future MUMBAI price ($)</Typography>
               </InputLabel>
               <Box sx={{ marginLeft: 15 }}>
                 <OutlinedInput
@@ -278,10 +278,10 @@ function ChooseBond() {
           </Box>
           <Box sx={{ width: 250, marginTop: 20, width: "100%", clear: "both", content: "", display: "table" }}>
             <Typography gutterBottom style={{ float: "left", color: "#D0DCE8" }} variant="h6">
-              TITANO rewards estimation
+              MUMBAI rewards estimation
             </Typography>
             <Typography id="non-linear-slider" gutterBottom style={{ float: "right", color: "#D0DCE8" }} variant="h6">
-              0.00 TITANO
+              0.00 MUMBAI
             </Typography>
           </Box>
           <Box sx={{ width: 250, marginTop: 20, width: "100%", clear: "both", content: "", display: "table" }}>
