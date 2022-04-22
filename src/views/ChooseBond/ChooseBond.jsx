@@ -4,15 +4,8 @@ import {
   Box,
   Grid,
   Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
   Typography,
   Zoom,
-  TextField,
   InputLabel,
   InputAdornment,
   Slider,
@@ -23,17 +16,15 @@ import { BondDataCard, BondTableData } from "./BondRow";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { formatCurrency } from "../../helpers";
 import useBonds from "../../hooks/Bonds";
-import { ThemeProvider, createMuiTheme } from "@material-ui/styles";
 
 import "./choosebond.scss";
 import { Skeleton } from "@material-ui/lab";
 import ClaimBonds from "./ClaimBonds";
 import _ from "lodash";
 import { allBondsMap } from "src/helpers/AllBonds";
-import { useEffect } from "react";
 
 function ChooseBond() {
-  const [value, setValue] = React.useState(1);
+  const [dateValue, setDateValue] = React.useState(1);
   const { bonds } = useBonds();
   const isSmallScreen = useMediaQuery("(max-width: 733px)"); // change to breakpoint query
   const isVerySmallScreen = useMediaQuery("(max-width: 420px)");
@@ -98,9 +89,9 @@ function ChooseBond() {
 
   const handleSliderChange = (e, val) => {
     console.log("value", val);
-    setValue(val);
+    setDateValue(val);
   };
-  console.log("second value", value);
+  console.log("second value", dateValue);
   return (
     <div id="choose-bond-view">
       {!isAccountLoading && !_.isEmpty(accountBonds) && <ClaimBonds activeBonds={accountBonds} />}
@@ -170,11 +161,15 @@ function ChooseBond() {
                     </InputAdornment>
                   }
                   aria-describedby="outlined-weight-helper-text"
-                  inputProps={{
-                    "aria-label": "weight",
-                  }}
                   fullWidth
                   style={{ borderRadius: 12 }}
+                  inputProps={{
+                    name: "mb_amount",
+                    type: "number",
+                    placeholder: "placeholder",
+                  }}
+                  helperText="Incorrect entry"
+                  defaultValue={0}
                 />
               </Box>
             </Grid>
@@ -192,7 +187,8 @@ function ChooseBond() {
                   }
                   aria-describedby="outlined-weight-helper-text"
                   inputProps={{
-                    "aria-label": "weight",
+                    name: "mb_apy",
+                    type: "number",
                   }}
                   fullWidth
                   style={{ borderRadius: 12 }}
@@ -216,7 +212,8 @@ function ChooseBond() {
                   }
                   aria-describedby="outlined-weight-helper-text"
                   inputProps={{
-                    "aria-label": "weight",
+                    name: "mb_price",
+                    type: "number",
                   }}
                   fullWidth
                   style={{ borderRadius: 12 }}
@@ -237,7 +234,8 @@ function ChooseBond() {
                   }
                   aria-describedby="outlined-weight-helper-text"
                   inputProps={{
-                    "aria-label": "weight",
+                    name: "mb_future_price",
+                    type: "number",
                   }}
                   fullWidth
                   style={{ borderRadius: 12 }}
@@ -248,13 +246,13 @@ function ChooseBond() {
 
           <Box sx={{ width: 250, marginTop: 50, width: "100%" }}>
             <Typography id="non-linear-slider" gutterBottom>
-              {value} Day
+              {dateValue} Day
             </Typography>
             <DateSlider
               min={1}
               max={365}
               onChange={(e, value) => handleSliderChange(e, value)}
-              value={value}
+              value={typeof dateValue === "number" ? dateValue : 1}
               valueLabelDisplay="off"
               aria-labelledby="non-linear-slider"
             />
