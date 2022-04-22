@@ -156,12 +156,14 @@ function ChooseBond() {
                   id="outlined-adornment-weight"
                   endAdornment={
                     <InputAdornment position="end">
-                      <Typography variant="h6">Max</Typography>
+                      <Typography variant="h6" style={{ cursor: "pointer" }}>
+                        Max
+                      </Typography>
                     </InputAdornment>
                   }
                   aria-describedby="outlined-weight-helper-text"
                   fullWidth
-                  style={{ borderRadius: 12 }}
+                  style={{ borderRadius: 12, fontSize: "1rem" }}
                   inputProps={{
                     name: "mb_amount",
                     type: "number",
@@ -180,7 +182,7 @@ function ChooseBond() {
                 <OutlinedInput
                   id="outlined-adornment-weight"
                   endAdornment={
-                    <InputAdornment position="end">
+                    <InputAdornment position="end" style={{ cursor: "pointer" }}>
                       <Typography variant="h6">Current</Typography>
                     </InputAdornment>
                   }
@@ -190,7 +192,8 @@ function ChooseBond() {
                     type: "number",
                   }}
                   fullWidth
-                  style={{ borderRadius: 12 }}
+                  style={{ borderRadius: 12, fontSize: "1rem" }}
+                  defaultValue={102483.58}
                 />
               </Box>
             </Grid>
@@ -205,7 +208,7 @@ function ChooseBond() {
                 <OutlinedInput
                   id="outlined-adornment-weight"
                   endAdornment={
-                    <InputAdornment position="end">
+                    <InputAdornment position="end" style={{ cursor: "pointer" }}>
                       <Typography variant="h6">Current</Typography>
                     </InputAdornment>
                   }
@@ -215,7 +218,8 @@ function ChooseBond() {
                     type: "number",
                   }}
                   fullWidth
-                  style={{ borderRadius: 12 }}
+                  style={{ borderRadius: 12, fontSize: "1rem" }}
+                  defaultValue={0.081136}
                 />
               </Box>
             </Grid>
@@ -227,7 +231,7 @@ function ChooseBond() {
                 <OutlinedInput
                   id="outlined-adornment-weight"
                   endAdornment={
-                    <InputAdornment position="end">
+                    <InputAdornment position="end" style={{ cursor: "pointer" }}>
                       <Typography variant="h6">Current</Typography>
                     </InputAdornment>
                   }
@@ -237,7 +241,8 @@ function ChooseBond() {
                     type: "number",
                   }}
                   fullWidth
-                  style={{ borderRadius: 12 }}
+                  style={{ borderRadius: 12, fontSize: "1rem" }}
+                  defaultValue={0.081136}
                 />
               </Box>
             </Grid>
