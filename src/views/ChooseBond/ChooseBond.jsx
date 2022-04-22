@@ -34,14 +34,6 @@ import { useEffect } from "react";
 
 function ChooseBond() {
   const [value, setValue] = React.useState(1);
-  const memoizedCallback = useCallback(
-    () => {
-      setValue(value);
-    },
-    [value],
-  );
-
-  const memoizedValue = React.useMemo(() => computeExpensiveValue(value), [value]);
   const { bonds } = useBonds();
   const isSmallScreen = useMediaQuery("(max-width: 733px)"); // change to breakpoint query
   const isVerySmallScreen = useMediaQuery("(max-width: 420px)");
