@@ -19,9 +19,6 @@ import "./sidebar.scss";
 function NavContent() {
   const [isActive] = useState();
   const address = useAddress();
-  const { bonds } = useBonds();
-  const { chainID } = useWeb3Context();
-
   const checkPage = useCallback((match, location, page) => {
     const currentPath = location.pathname.replace("/", "");
     if (currentPath.indexOf("dashboard") >= 0 && page === "dashboard") {
@@ -69,7 +66,7 @@ function NavContent() {
                 className={`button-dapp-menu ${isActive ? "active" : ""}`}
               >
                 <Typography variant="h6">
-                  <SvgIcon color="primary" color="black" component={DashboardIcon} />
+                  <SvgIcon color="primary" component={DashboardIcon} />
                   Dashboard
                 </Typography>
               </Link>
@@ -102,18 +99,28 @@ function NavContent() {
                   Calculator
                 </Typography>
               </Link>
-              <Link component={NavLink} to="/swap" className={`button-dapp-menu ${isActive ? "active" : ""}`}>
+              <a
+                target="_blank"
+                className="MuiTypography-root MuiLink-root MuiLink-underlineNone button-dapp-menu MuiTypography-colorPrimary"
+                href="https://app.bogged.finance/bsc/swap?tokenIn=BNB&tokenOut"
+                rel="noopener noreferrer"
+              >
                 <Typography variant="h6">
                   <SvgIcon color="primary" component={feedback} />
                   Swap
                 </Typography>
-              </Link>
-              <Link component={NavLink} to="/docs" className={`button-dapp-menu ${isActive ? "active" : ""}`}>
+              </a>
+              <a
+                target="_blank"
+                className="MuiTypography-root MuiLink-root MuiLink-underlineNone button-dapp-menu MuiTypography-colorPrimary"
+                href="https://docs.MUMBAI.finance/"
+                rel="noopener noreferrer"
+              >
                 <Typography variant="h6">
                   <SvgIcon color="primary" component={Docs} />
-                  Docs
+                  Doc
                 </Typography>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -2,26 +2,12 @@ import { useEffect, useState } from "react";
 import { Paper, Typography, Box, Zoom, Grid, Container, useMediaQuery } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
 import { useSelector } from "react-redux";
-import Chart from "../../components/Chart/Chart.jsx";
 import { trim, formatCurrency } from "../../helpers";
-import {
-  treasuryDataQuery,
-  rebasesDataQuery,
-  bulletpoints,
-  tooltipItems,
-  tooltipInfoMessages,
-  itemType,
-} from "./treasuryData.js";
 import { useTheme } from "@material-ui/core/styles";
 import "./treasury-dashboard.scss";
-import apollo from "../../lib/apolloClient";
 import InfoTooltip from "src/components/InfoTooltip/InfoTooltip.jsx";
 
 function TreasuryDashboard() {
-  const [data, setData] = useState(null);
-  const [apy, setApy] = useState(null);
-  const [runway, setRunway] = useState(null);
-  const [staked, setStaked] = useState(null);
   const theme = useTheme();
   const smallerScreen = useMediaQuery("(max-width: 650px)");
   const verySmallScreen = useMediaQuery("(max-width: 379px)");
@@ -50,38 +36,6 @@ function TreasuryDashboard() {
   const wsOhmPrice = useSelector(state => {
     return state.app.marketPrice * state.app.currentIndex;
   });
-
-  useEffect(() => {
-    apollo(treasuryDataQuery).then(r => {
-      let metrics = r.data.protocolMetrics.map(entry =>
-        Object.entries(entry).reduce((obj, [key, value]) => ((obj[key] = parseFloat(value)), obj), {}),
-      );
-      metrics = metrics.filter(pm => pm.treasuryMarketValue > 0);
-      setData(metrics);
-
-      let staked = r.data.protocolMetrics.map(entry => ({
-        staked: (parseFloat(entry.sOhmCirculatingSupply) / parseFloat(entry.ohmCirculatingSupply)) * 100,
-        timestamp: entry.timestamp,
-      }));
-      staked = staked.filter(pm => pm.staked < 100);
-      setStaked(staked);
-
-      let runway = metrics.filter(pm => pm.runway10k > 5);
-      setRunway(runway);
-    });
-
-    apollo(rebasesDataQuery).then(r => {
-      let apy = r.data.rebases.map(entry => ({
-        apy: Math.pow(parseFloat(entry.percentage) + 1, 365 * 3) * 100,
-        timestamp: entry.timestamp,
-      }));
-
-      apy = apy.filter(pm => pm.apy < 300000);
-
-      setApy(apy);
-    });
-  }, []);
-
   return (
     <div id="treasury-dashboard-view" className={`${smallerScreen && "smaller"} ${verySmallScreen && "very-small"}`}>
       <Container
