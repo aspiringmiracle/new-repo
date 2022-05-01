@@ -24,7 +24,12 @@ import _ from "lodash";
 import { allBondsMap } from "src/helpers/AllBonds";
 
 function ChooseBond() {
+  //State value for calculator
   const [dateValue, setDateValue] = React.useState(1);
+  const [mumbaiAmount, setMumbaiAmount] = React.useState(0);
+  const [purchasePrice, setpurchasePrice] = React.useState(0.081136);
+  const [futurePrice, setfuturePrice] = React.useState(0.081136);
+
   const { bonds } = useBonds();
   const isSmallScreen = useMediaQuery("(max-width: 733px)"); // change to breakpoint query
   const isVerySmallScreen = useMediaQuery("(max-width: 420px)");
@@ -43,7 +48,7 @@ function ChooseBond() {
   });
 
   const marketPrice = useSelector(state => {
-    return 1; //state.app.marketPrice;
+    return 102482.58; //state.app.marketPrice;
   });
 
   const treasuryBalance = useSelector(state => {
@@ -90,7 +95,6 @@ function ChooseBond() {
   const handleSliderChange = (e, val) => {
     setDateValue(val);
   };
-
   return (
     <div id="choose-bond-view">
       {!isAccountLoading && !_.isEmpty(accountBonds) && <ClaimBonds activeBonds={accountBonds} />}
@@ -170,7 +174,8 @@ function ChooseBond() {
                     placeholder: "placeholder",
                   }}
                   helperText="Incorrect entry"
-                  defaultValue={0}
+                  value={mumbaiAmount}
+                  onChange={e => setMumbaiAmount(e.target.value)}
                 />
               </Box>
             </Grid>
@@ -193,7 +198,7 @@ function ChooseBond() {
                   }}
                   fullWidth
                   style={{ borderRadius: 12, fontSize: "1rem" }}
-                  defaultValue={102483.58}
+                  defaultValue={102482.58}
                 />
               </Box>
             </Grid>
@@ -219,7 +224,7 @@ function ChooseBond() {
                   }}
                   fullWidth
                   style={{ borderRadius: 12, fontSize: "1rem" }}
-                  defaultValue={0.081136}
+                  value={purchasePrice}
                 />
               </Box>
             </Grid>
@@ -242,7 +247,7 @@ function ChooseBond() {
                   }}
                   fullWidth
                   style={{ borderRadius: 12, fontSize: "1rem" }}
-                  defaultValue={0.081136}
+                  value={futurePrice}
                 />
               </Box>
             </Grid>
@@ -267,15 +272,7 @@ function ChooseBond() {
               Your initial investment
             </Typography>
             <Typography id="non-linear-slider" gutterBottom style={{ float: "right", color: "#D0DCE8" }} variant="h6">
-              $0.00
-            </Typography>
-          </Box>
-          <Box sx={{ width: 250, marginTop: 20, width: "100%", clear: "both", content: "", display: "table" }}>
-            <Typography gutterBottom style={{ float: "left", color: "#D0DCE8" }} variant="h6">
-              Current wealth
-            </Typography>
-            <Typography id="non-linear-slider" gutterBottom style={{ float: "right", color: "#D0DCE8" }} variant="h6">
-              $0.00
+              $ {mumbaiAmount * purchasePrice.toFixed(2)}
             </Typography>
           </Box>
           <Box sx={{ width: 250, marginTop: 20, width: "100%", clear: "both", content: "", display: "table" }}>
@@ -283,7 +280,7 @@ function ChooseBond() {
               MUMBAI rewards estimation
             </Typography>
             <Typography id="non-linear-slider" gutterBottom style={{ float: "right", color: "#D0DCE8" }} variant="h6">
-              0.00 MUMBAI
+              {(mumbaiAmount * Math.pow(1.01917, dateValue)).toFixed(2)} MUMBAI
             </Typography>
           </Box>
           <Box sx={{ width: 250, marginTop: 20, width: "100%", clear: "both", content: "", display: "table" }}>
@@ -291,15 +288,7 @@ function ChooseBond() {
               Potential return
             </Typography>
             <Typography id="non-linear-slider" gutterBottom style={{ float: "right", color: "#D0DCE8" }} variant="h6">
-              $0.00
-            </Typography>
-          </Box>
-          <Box sx={{ width: 250, marginTop: 20, width: "100%", clear: "both", content: "", display: "table" }}>
-            <Typography gutterBottom style={{ float: "left", color: "#D0DCE8" }} variant="h6">
-              Potential number of Space Travels
-            </Typography>
-            <Typography id="non-linear-slider" gutterBottom style={{ float: "right", color: "#D0DCE8" }} variant="h6">
-              0
+              $ {mumbaiAmount * futurePrice.toFixed(2)}
             </Typography>
           </Box>
         </Paper>

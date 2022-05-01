@@ -156,7 +156,7 @@ function App() {
     }
     // We want to ensure that we are storing the UTM parameters for later, even if the user follows links
     if (shouldTriggerSafetyCheck()) {
-      dispatch(info("Safety Check: Always verify you're on app.olympusdao.finance!"));
+      dispatch(info("Safety Check: Always verify you're on app.mumbai.finance!"));
     }
   }, []);
 
